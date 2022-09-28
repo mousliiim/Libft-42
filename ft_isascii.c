@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 22:03:03 by mouslimmo         #+#    #+#             */
-/*   Updated: 2022/09/28 21:48:26 by mouslimmo        ###   ########.fr       */
+/*   Created: 2022/09/28 21:53:25 by mmourdal          #+#    #+#             */
+/*   Updated: 2022/09/28 21:53:30 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-
-int	ft_tolower(int c);
-int	ft_toupper(int c);
-int	ft_atoi(const char *str);
-int	ft_isalpha(int c);
-int	ft_isascii(int c);
-#endif
+int	ft_isascii(int c)
+{
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
+}
