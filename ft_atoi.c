@@ -6,10 +6,15 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 20:25:23 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/02 17:58:31 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/03 13:05:03 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
+/*
+ * Transforme une chaine de caractere donnée en Parametre
+ * en entier
+*/
 
 int	ft_atoi(const char *nptr)
 {

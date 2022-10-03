@@ -6,7 +6,7 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 22:03:03 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/03 11:27:30 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/03 13:25:37 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int		ft_isalnum(int c);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s);
-void	bzero(void *s, size_t n);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
 #endif

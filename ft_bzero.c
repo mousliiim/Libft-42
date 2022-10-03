@@ -6,11 +6,23 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:15:07 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/03 12:47:47 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/03 13:20:26 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+ * La fonction bzero met a 0 ('\0') les n (taille en parametre) -> 
+ * 1ers octets du bloc pointe par *s
+*/
+
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, 0, n);
+}
+
+/*
+ * CODE DETAILLE
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*dest;
@@ -24,8 +36,11 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
+ *
+*/
 
 /*
+ * MAIN DE TEST
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -43,4 +58,5 @@ void	ft_bzero(void *s, size_t n)
 			printf("Display after Ft_Bzero : %s\n\n", deux);
         return (0);
     }
+ *
 */

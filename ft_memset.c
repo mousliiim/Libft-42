@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 17:18:18 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/03 13:11:36 by mmourdal         ###   ########.fr       */
+/*   Created: 2022/10/03 12:54:15 by mmourdal          #+#    #+#             */
+/*   Updated: 2022/10/03 13:26:09 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 /*
- * DESCRIPTION : La fonction strchr() renvoie un pointeur sur la premiere
- * occurrence du caractere c dans la chaine s.
+ * DESCRIPTION : La fonction memset() remplit les n premiers octets de la zone
+ * mémoire pointée par b avec l'octet c.
  *
- * RETOUR : Un pointeur sur le caractere correspondant ou NULL si non trouve.
+ * VALEUR RENVOYEE : La fonction memset() renvoie un pointeur sur la zone
+ * mémoire b.
+ *
 */
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int	i;
+	char	*str;
+	size_t	len;
 
-	i = 0;
-	while (s[i])
+	len = n;
+	str = s;
+	while (len)
 	{
-		if (s[i] == (char) c)
-		{
-			return ((char *)&s[i]);
-		}
-		i++;
+		*str = (unsigned char)c;
+		str++;
+		len--;
 	}
-	if (c == 0)
-	{
-		return ((char *)&s[i]);
-	}
-	return (0);
+	return (s);
 }
