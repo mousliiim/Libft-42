@@ -6,7 +6,7 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 20:25:23 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/03 13:05:03 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/05 04:03:31 by mouss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,9 +18,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	sign;
-	int	result;
+	int			i;
+	int			sign;
+	long int	result;
 
 	i = 0;
 	sign = 1;
@@ -37,6 +37,15 @@ int	ft_atoi(const char *nptr)
 		result *= 10;
 		result += nptr[i++] - '0';
 	}
-	result *= sign;
-	return (result);
+	return (sign * result);
 }
+
+/*
+int	main(int argc, char **argv)
+{
+	(void) argc;
+	printf("Ft_Atoi : %i\n", ft_atoi(argv[1]));
+	printf("Atoi : %i\n", atoi(argv[1]));
+	return (0);
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 22:03:03 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/03 13:25:37 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/05 04:20:04 by mouss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,6 @@ size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strrchr(const char *s, int c);
 #endif
