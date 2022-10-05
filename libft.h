@@ -6,7 +6,7 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 22:03:03 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/05 04:20:04 by mouss            ###   ########.fr       */
+/*   Updated: 2022/10/05 15:01:48 by mouss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,6 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+void	*ft_calloc(size_t nmemb, size_t size);
 #endif
