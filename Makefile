@@ -35,4 +35,16 @@ so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
 	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
+myclean:
+	$(info ************  Je clean pour toi 😉  *************)
+	@rm *.o
+	$(info Supprimme tout les fichiers .o ✅)
+	@rm libft.so
+	$(info Suprimme le fichier libft.so pour le Checker ✅)
+	@rm a.out
+	$(info Suprimme le fichier a.out pour le Checker ✅)
+	@rm libft.a
+	$(info Suprimme le fichier libft.a ✅)
+	$(info ************  Et voila c'est fait  *************)
+
 .PHONY:			all clean fclean re bonus
