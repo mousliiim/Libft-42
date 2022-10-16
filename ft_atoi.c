@@ -6,7 +6,7 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 20:25:23 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/13 06:43:23 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/16 04:20:04 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -41,10 +41,23 @@ int	ft_atoi(const char *nptr)
 	return (result * sign);
 }
 
-/*int	main(int argc, char **argv)
+int	main(void)
 {
-	(void) argc;
-	printf("ft_atoi : %i\n", ft_atoi(argv[1]));
-	printf("atoi : %i\n", atoi(argv[1]));
-	return (0);
-}*/
+	printf("\n************** FT_ATOI *************\n");
+	printf("\n'42' : %d\n", ft_atoi("42"));
+	printf("'-42' : %d\n", ft_atoi("-42"));
+	printf("'   +4210' : %d\n", ft_atoi("   +4210"));
+	printf("'   +-+4210' : %d\n", ft_atoi("   +-+4210"));
+	printf("'m   +-+4210' : %d\n", ft_atoi("m   +-+4210"));
+	printf("'   42m10' : %d\n", ft_atoi("   42m10"));
+	printf("'m' : %d\n", ft_atoi("m"));
+	printf("\n*************** ATOI ***************\n");
+	printf("\n'42' : %d\n", atoi("42"));
+	printf("'-42' : %d\n", atoi("-42"));
+	printf("'   +4210' : %d\n", atoi("   +4210"));
+	printf("'   +-+4210' : %d\n", atoi("   +-+4210"));
+	printf("'m   +-+4210' : %d\n", atoi("m   +-+4210"));
+	printf("'   42m10' : %d\n", atoi("   42m10"));
+	printf("'m' : %d\n", atoi("m"));
+	printf("\n************************************\n\n");
+}
