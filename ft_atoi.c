@@ -6,7 +6,7 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 20:25:23 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/12 15:52:26 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/13 06:43:23 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -44,7 +44,7 @@ int	ft_atoi(const char *nptr)
 /*int	main(int argc, char **argv)
 {
 	(void) argc;
-	printf("Ft_Atoi : %i\n", ft_atoi(argv[1]));
-	printf("Atoi : %i\n", atoi(argv[1]));
+	printf("ft_atoi : %i\n", ft_atoi(argv[1]));
+	printf("atoi : %i\n", atoi(argv[1]));
 	return (0);
 }*/
