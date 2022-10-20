@@ -6,11 +6,16 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 05:07:48 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/13 06:37:35 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/20 05:50:07 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-//#include <string.h>
+
+/*
+ * La fonction strmapi applique la fonction en paramétre de celle ci (*f) 
+ * à chaque caractère de *s pour crée une nouvelle chaîne (avec malloc) 
+ * résultant de l'applications successives de f.
+*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

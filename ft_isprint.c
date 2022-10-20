@@ -6,10 +6,15 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 22:10:02 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/09/28 22:16:42 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/20 04:42:04 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
+/*
+ * Cette fonction permet de tester si un caractère s'affiche ou non.
+ * Parmis ces caractères on retrouve ceux ayant une représentation graphique.
+*/
 
 int	ft_isprint(int c)
 {

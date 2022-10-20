@@ -6,7 +6,7 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:15:07 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/03 13:20:26 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/20 04:30:45 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -40,23 +40,18 @@ void	ft_bzero(void *s, size_t n)
 */
 
 /*
- * MAIN DE TEST
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+int	main(void)
+{
+	char	un[10] = "Hello!";
+	char	deux[10] = "Hello!";
 
-    int main(void)
-    {
-		char buffer[10] = "Hello!";
-		char deux[10] = "Hello!";
-			printf("\nDisplay above Bzero : %s\n", buffer);
-			bzero(buffer, 0);
-			printf("Display after Bzero : %s\n", buffer);
-				printf("________________\n\n");
-			printf("Display above Ft_Bzero : %s\n", deux);
-			ft_bzero(deux, 0);
-			printf("Display after Ft_Bzero : %s\n\n", deux);
-        return (0);
-    }
- *
+	printf("\nDisplay above Bzero : %s\n", un);
+	ft_bzero(un, 1);
+	printf("Display after Bzero : %s\n", un);
+	printf("________________\n\n");
+	printf("Display above Ft_Bzero : %s\n", deux);
+	ft_bzero(deux, 1);
+	printf("Display after Ft_Bzero : %s\n\n", deux);
+	return (0);
+}
 */

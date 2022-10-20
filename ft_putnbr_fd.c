@@ -6,10 +6,15 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 21:03:45 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/13 02:39:22 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/20 05:16:09 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
+/*
+ * Ecrit un ou des chiffre(s) positif ou négatif donner en premier parametre 
+ * sur le file descriptor donné en deuxieme paramétre.
+*/
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -30,9 +35,10 @@ void	ft_putnbr_fd(int n, int fd)
 	ft_putchar_fd(num + '0', fd);
 }
 
-/*int	main(void)
+/*
+int	main(void)
 {
-	printf("\n******** putnbr_fd ********\n");
+	printf("\n******** FT_PUTNBR_FT ********\n");
 	ft_putnbr_fd(42, 1);
 	ft_putstr_fd("\n", 1);
 	ft_putnbr_fd(420042, 1);
@@ -48,4 +54,5 @@ void	ft_putnbr_fd(int n, int fd)
 	ft_putnbr_fd(2147483647, 1);
 	ft_putstr_fd("\n", 1);
 	printf("***************************");
-}*/
+}
+*/

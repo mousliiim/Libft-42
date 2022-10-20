@@ -6,10 +6,15 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 21:57:12 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/09/28 22:08:32 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/20 05:34:18 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
+/*
+ * Cette fonction permet de tester si un caractère donner en paramétre (c) 
+ * Est un chiffre décimal ou non.
+*/
 
 int	ft_isdigit(int c)
 {

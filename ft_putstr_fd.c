@@ -6,21 +6,26 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:12:51 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/12 17:04:49 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/20 05:15:01 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 //#include <fcntl.h>
 
+/*
+ * Ecrit une chaine de caractère du premier parametre (*s) sur le file descriptor
+ * donné en deuxieme paramétre.
+*/
+
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (!s)
-		return ;
-	while (*s)
-		ft_putchar_fd((char)*s++, fd);
+	if (s)
+		while (*s)
+			ft_putchar_fd(*s++, fd);
 }
 
-/*int	main(void)
+/*
+int	main(void)
 {
 	int	fd;
 
@@ -35,4 +40,5 @@ void	ft_putstr_fd(char *s, int fd)
 	printf("\n");
 	system("cat testfilestr");
 	return (0);
-}*/
+}
+*/

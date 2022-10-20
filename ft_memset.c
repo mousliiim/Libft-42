@@ -6,32 +6,26 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 12:54:15 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/05 15:32:37 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/20 04:57:00 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 /*
- * DESCRIPTION : La fonction memset() remplit les n premiers octets de la zone
- * mémoire pointée par b avec l'octet c.
- *
- * VALEUR RENVOYEE : La fonction memset() renvoie un pointeur sur la zone
- * mémoire b.
- *
+ * Cette fonction permet de remplir une zone mémoire, identifiée par son adresse
+ * (*s) et sa taille, avec une valeur précise (c) et en indiquant le nombre 
+ * d'octet a initialiser (n)
 */
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	char	*str;
-	size_t	len;
+	size_t	i;
 
-	len = n;
-	str = s;
-	while (len)
+	i = 0;
+	while (i < n)
 	{
-		*str = (unsigned char)c;
-		str++;
-		len--;
+		((unsigned char *)s)[i] = (unsigned char)c;
+		i++;
 	}
 	return (s);
 }

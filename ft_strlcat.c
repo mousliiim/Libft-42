@@ -6,10 +6,17 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 03:57:15 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/09 05:15:20 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/20 05:43:02 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
+/*
+ * La fonction concatène les chaîne *dst et *src, et place le résultat dans la 
+ * chaîne *dst. Contrairement à la fonction strcat la longueur totale de la 
+ * chaîne sera comprise entre la longueur initiale de *dst et size. Le '\0' de
+ * fin de chaîne est compatibilisé.
+*/
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

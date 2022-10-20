@@ -6,10 +6,16 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 22:18:02 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/16 03:56:16 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/20 05:58:40 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
+/*
+ * La fonction strtrim supprime tous les caractères donner en deuxieme 
+ * paramétre de la fonction du début et de la fin d'une chaîne de caractère
+ * donner via le premier parametre.
+*/
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

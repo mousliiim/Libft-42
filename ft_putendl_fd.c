@@ -6,22 +6,29 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:42:29 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/12 17:10:23 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/20 05:07:33 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-//#include <fcntl.h>
+
+/*
+ * Ecrit la string du parametre (*s) sur le file descriptor donné
+ * en deuxieme paramétre suivi d'un retour a la ligne.
+*/
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (!s)
-		return ;
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	if (s)
+	{
+		ft_putstr_fd(s, fd);
+		ft_putchar_fd('\n', fd);
+	}
 }
 
-/*int	main(void)
+/*
+int	main(void)
 {
-	printf("\n******** Test de ft_putendl_fd ********\n'test':\n");
+	printf("\n******** FT_PUTENDL_FD ********\n'test':\n");
 	ft_putendl_fd("test", 1);
-}*/
+}
+*/

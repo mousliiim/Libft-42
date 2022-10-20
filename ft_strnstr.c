@@ -6,10 +6,17 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 03:27:34 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/10 04:40:19 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/20 05:53:27 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
+/*
+ * La fonction strnstr() localise la première occurrence de la chaîne à 
+ * terminaison null little dans la chaîne big, où pas plus de len caractères 
+ * sont recherchés. Les caractères qui apparaissent après un caractère ‘\0’ 
+ * ne sont pas recherchés.
+*/
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

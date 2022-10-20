@@ -6,10 +6,15 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 20:37:51 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/15 22:07:42 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/20 05:39:24 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
+/*
+ * La fonction strjoin crée une chaîne composée de l'élément *s1 concaténé avec 
+ * l'élément *s2 et la chaine renvoyer et alloué dynamiquement avec malloc.
+*/
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

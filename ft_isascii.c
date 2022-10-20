@@ -6,10 +6,14 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 21:53:25 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/09/28 21:53:30 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/20 04:39:34 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
+/*
+ * Cette fonction permet de tester si un caractère fait partie de la table ascii.
+*/
 
 int	ft_isascii(int c)
 {

@@ -6,10 +6,15 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 17:50:58 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/02 18:25:52 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/20 05:36:17 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
+/*
+ * la fonction strdup alloue une nouvelle zone de mémoire via la fonction malloc
+ * afin d'y copier la chaîne de caractères initiale donner en paramétre (*s).
+*/
 
 char	*ft_strdup(const char *s)
 {
@@ -19,16 +24,14 @@ char	*ft_strdup(const char *s)
 
 	len = ft_strlen(s);
 	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (str == NULL)
-	{
+	if (!str)
 		return (NULL);
-	}
 	i = 0;
 	while (s[i])
 	{
 		str[i] = s[i];
 		i++;
 	}
-	str[i] = 0;
+	str[i] = '\0';
 	return (str);
 }
