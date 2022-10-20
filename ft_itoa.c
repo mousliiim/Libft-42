@@ -6,7 +6,7 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 22:16:58 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/20 04:11:52 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/20 14:33:48 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -65,7 +65,7 @@ char	*ft_itoa(int n)
 /*
 int	main(void)
 {
-	printf("\n************** FT_ATOI *************\n");
+	printf("\n************** FT_ITOA *************\n");
 	printf("\n'42' : %s\n", ft_itoa(42));
 	printf("'-42' : %s\n", ft_itoa(-42));
 	printf("'0' : %s\n", ft_itoa(0));
