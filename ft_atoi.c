@@ -6,7 +6,7 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 20:25:23 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/16 04:20:04 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/10/20 02:26:02 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,29 +18,28 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	sign;
-	int	result;
+	int		sign;
+	long	result;
 
-	i = 0;
 	sign = 1;
 	result = 0;
-	while ((nptr[i] >= 7 && nptr[i] <= 13) || nptr[i] == 32)
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	while ((*nptr >= 7 && *nptr <= 13) || *nptr == 32)
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
 	{
-		if (nptr[i] == '-')
+		if (*nptr == '-')
 			sign = -1;
-		i++;
+		nptr++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	while (*nptr >= '0' && *nptr <= '9')
 	{
-		result = result * 10 + nptr[i] - '0';
-		i++;
+		result = result * 10 + *nptr - '0';
+		nptr++;
 	}
 	return (result * sign);
 }
 
+/*
 int	main(void)
 {
 	printf("\n************** FT_ATOI *************\n");
@@ -60,4 +59,4 @@ int	main(void)
 	printf("'   42m10' : %d\n", atoi("   42m10"));
 	printf("'m' : %d\n", atoi("m"));
 	printf("\n************************************\n\n");
-}
+}*/
