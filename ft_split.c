@@ -6,7 +6,7 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 22:17:23 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/20 06:16:44 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/11/07 20:36:26 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -17,7 +17,7 @@
  * alloué dynamiquement et qui termine par un '\0'.
 */
 
-static char	*ft_strndup(const char *s, int n)
+char	*ft_strndup(const char *s, int n)
 {
 	int		i;
 	char	*str;
@@ -37,7 +37,7 @@ static char	*ft_strndup(const char *s, int n)
 	return (str);
 }
 
-static int	count_word(char const *s, char c)
+int	count_word(char const *s, char c)
 {
 	int	i;
 	int	word;
@@ -59,7 +59,7 @@ static int	count_word(char const *s, char c)
 	return (word);
 }
 
-static int	count_len_word(char const *s, char c)
+int	count_len_word(char const *s, char c)
 {
 	int	i;
 
