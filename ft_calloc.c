@@ -6,10 +6,12 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:34:56 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/05 15:35:02 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/11/10 23:25:43 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
+#define SIZE_MAX	(18446744073709551615UL)
 
 /*
  * La fonction calloc() a le même rôle que malloc().
@@ -27,6 +29,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	char	*mem;
 	size_t	i;
 
+	if (nmemb && size == SIZE_MAX)
+		return (NULL);
 	i = 0;
 	mem = malloc(nmemb * size);
 	if (mem == NULL)

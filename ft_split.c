@@ -6,9 +6,10 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 22:17:23 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/11/07 20:36:26 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/11/12 19:29:08 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -17,16 +18,14 @@
  * alloué dynamiquement et qui termine par un '\0'.
 */
 
-char	*ft_strndup(const char *s, int n)
+static char	*ft_strndup(const char *s, int n)
 {
 	int		i;
 	char	*str;
 
 	str = (char *)malloc(sizeof(char) * (n + 1));
 	if (!str)
-	{
 		return (NULL);
-	}
 	i = 0;
 	while (i < n)
 	{
@@ -37,7 +36,7 @@ char	*ft_strndup(const char *s, int n)
 	return (str);
 }
 
-int	count_word(char const *s, char c)
+static int	count_word(char const *s, char c)
 {
 	int	i;
 	int	word;
@@ -59,32 +58,25 @@ int	count_word(char const *s, char c)
 	return (word);
 }
 
-int	count_len_word(char const *s, char c)
+static int	count_len_word(char const *s, char c)
 {
 	int	i;
 
 	i = 0;
 	while (s[i] && s[i] != c)
-	{
 		i++;
-	}
+	while (*s && *s == c)
+		s++;
 	return (i);
 }
 
-/*static char		**ft_free(char **str)
+static char	**ft_free(char **str, int i)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
+	while (--i >= 0)
 		free(str[i]);
-		i++;
-	}
 	free(str);
 	return (NULL);
 }
-*/
 
 char	**ft_split(char const *s, char c)
 {
@@ -94,37 +86,41 @@ char	**ft_split(char const *s, char c)
 	int		word;
 
 	word = count_word(s, c);
-	strs = (char **)malloc(sizeof(char *) * word + 1);
+	strs = (char **)malloc(sizeof(char *) * (word + 1));
 	if (!strs)
 		return (NULL);
 	i = 0;
-	while (i < word)
+	while (i < word && *s)
 	{
-		while (*s && *s == c)
+		while (*s == c)
 			s++;
 		word_len = count_len_word(s, c);
 		strs[i] = ft_strndup(s, word_len);
+		if (!strs[i])
+			return (ft_free(strs, i));
 		s += word_len;
 		i++;
 	}
-	strs[word] = '\0';
+	strs[word] = 0;
 	return (strs);
 }
 
-/*int	main(void)
+/*
+int	main(void)
 {
 	char	**result;
 	int		i;
 	printf("\n************ FT_SPLIT ***********\n");
-	printf("Separateur : '-' : Salut----Les----Terriens---- : \n");
+	printf("Separateur : '-' | Chaine : \"Salut----Les----Terriens----\" : \n");
 	result = ft_split("Salut----Les----Terriens----", '-');
 	i = -1;
 	while (result[++i])
-		printf("%d => %s\n", i, result[i]);
-	printf("\nSeparateur : '/' : 4242 1///42!!42 2//42 3 : \n");
+		printf("Index : %d => %s\n", i, result[i]);
+	printf("\nSeparateur : '/' | Chaine : \"4242 1///42!!42 2//42 3\" : \n");
 	result = ft_split("4242 1///42!!42 2//42 3", '/');
 	i = -1;
 	while (result[++i])
-		printf("%d => %s\n", i, result[i]);
+		printf("Index : %d => %s\n", i, result[i]);
 	printf("*********************************\n\n");
-}*/
+}
+*/

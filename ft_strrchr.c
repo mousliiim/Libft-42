@@ -6,9 +6,10 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:36:05 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/20 05:56:16 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/11/10 01:00:33 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -23,15 +24,11 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	while (s[i])
-	{
 		i++;
-	}
 	while (i >= 0)
 	{
 		if (s[i] == (char) c)
-		{
 			return ((char *)&s[i]);
-		}
 		else
 			i--;
 	}

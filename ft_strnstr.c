@@ -6,9 +6,10 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 03:27:34 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/20 05:53:27 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/11/09 19:28:46 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -28,7 +29,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	if (len == 0)
 	{
-		return ((char *)big);
+		return (0);
 	}
 	len_little = ft_strlen(little);
 	while (*big && len_little <= len--)
@@ -48,10 +49,12 @@ int	main(void)
 	const char	bigarray[20] = "TestMouslim";
 	const char	littlearray[10] = "Mo";
 	char		*result;
-
-	result = ft_strnstr(bigarray, littlearray, 6);
+	size_t		lencheck = 0;
+	
+	result = ft_strnstr(bigarray, littlearray, lencheck);
 	printf("\nChaine sur laquelle ont recherche : %s\n", bigarray);
 	printf("Premiere occurence rechercher : %s\n", littlearray);
+	printf("Len caractere a chercher : %zu\n", lencheck);
 	printf("La sous chaine rechercher est : %s\n\n", result);
 	return (0);
 }

@@ -6,10 +6,12 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:35:48 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/11/07 20:09:07 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/11/10 23:27:33 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
+//#include <bsd/string.h>
 
 /*
  * Cette fonction permet de comparer deux chaînes de caractères
@@ -25,7 +27,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (s1 == NULL || n == 0)
+	if (!n)
 		return (0);
 	while ((s1[i] && s2[i]) && s1[i] == s2[i] && i < (n - 1))
 		i++;

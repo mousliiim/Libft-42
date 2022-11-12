@@ -9,7 +9,9 @@
 /*   Updated: 2022/10/20 04:17:50 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
+#include <stdio.h>
 
 /*
  * Transforme une chaine de caractere donnée en Parametre
@@ -39,7 +41,6 @@ int	ft_atoi(const char *nptr)
 	return (result * sign);
 }
 
-/*
 int	main(void)
 {
 	printf("\n************** FT_ATOI *************\n");
@@ -59,4 +60,4 @@ int	main(void)
 	printf("'   42m10' : %d\n", atoi("   42m10"));
 	printf("'m' : %d\n", atoi("m"));
 	printf("\n************************************\n\n");
-}*/
+}

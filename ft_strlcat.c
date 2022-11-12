@@ -6,10 +6,13 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 03:57:15 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/20 05:43:02 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/11/10 23:27:04 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
+//#include <bsd/string.h>
+//#include <stdio.h>
 
 /*
  * La fonction concatène les chaîne *dst et *src, et place le résultat dans la 
@@ -24,9 +27,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	j;
 
 	i = 0;
-	if ((void *)size == NULL)
+	if (size == 0)
 	{
-		return (0);
+		return (ft_strlen(src));
 	}
 	while (dst[i] && i < size)
 	{
@@ -44,17 +47,21 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 }
 
 /*
-int main(void)
+int	main(void)
 {
 	// Compiler avec Flag -lbsd
-	printf("\n ****** TEST FT_STRLCAT ******\n");
-	char dst[100] = "1";
-    char src[] = "23";
-	char dst2[100] = "1";
-	char src2[] = "23";
+	printf("\n****** TEST FT_STRLCAT ******\n");
+	char dst[30] = "";
+    char src[] = "123";
+	char dst2[30] = "";
+	char src2[] = "123";
     size_t result = ft_strlcat(dst, src, sizeof(dst));
-    printf("Ft_strcat : %s | Retour fonction : %zu\n", dst, result);
+	printf("Src array before : \"%s\" | Dst array before : \"%s\"\n", src2, dst2);
+    printf("After ft_strlcat : %s | Function Return : %zu\n", dst, result);
+	printf("Print dst array after ft_strlcat : %s\n\n", dst);
+	printf("****** TEST STRLCAT ******\n");
+	printf("Src2 array before : \"%s\" | Dst2 array before : \"%s\"\n", src2, dst2);
 	size_t result2 = strlcat(dst2, src2, sizeof(dst2));
-	printf("strcat : %s | Retour fonction : %zu\n\n", dst2, result2);
-}
-*/
+	printf("After strlcat : %s | Function Return : %zu\n", dst2, result2);
+	printf("Print dst2 array after strlcat : %s\n\n", dst2);
+}*/

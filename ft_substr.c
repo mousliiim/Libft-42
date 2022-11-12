@@ -6,9 +6,10 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 02:41:45 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/20 06:02:32 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/11/09 23:39:44 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -24,17 +25,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t			s_size;
 	char			*str;
 
-	if (!s)
-		return (NULL);
-	s_size = ft_strlen(s);
-	str = (char *)malloc(sizeof(char) * len + 1);
+	if (!s || start >= ft_strlen((char *)s))
+		return (str = ft_calloc(1, 1));
+	s_size = ft_strlen((char *)s);
+	if (start + len > s_size)
+		len = s_size - start;
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	else if (start >= s_size)
-	{
-		start = s_size;
-		len = 0;
-	}
 	i = 0;
 	while (i < len && s[start + i])
 	{
@@ -48,14 +46,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 /*
 int	main(void)
 {
-	char	*str;
 	char	*ft;
 
 	printf("\n************** FT_SUBSTR *************\n");
-	str = "Mouslim de 42";
-	ft = ft_substr(str, 11, 2);
+	ft = ft_substr("tripouille", 1, 1);
 	printf("Test de la fonction :\n");
-	printf("ft_substr(\"Mouslim de 42\", 11, 2) : %s\n", ft);
+	printf("ft_substr(\"Mouslim de 42\", 11, 10) : %s\n", ft);
 	printf("**************************************\n\n");
 }
 */

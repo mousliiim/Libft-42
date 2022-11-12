@@ -6,10 +6,13 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 17:18:18 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/20 05:30:59 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/11/10 23:26:49 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
+//#include <string.h>
+//#include <stdio.h>
 
 /*
  * DESCRIPTION : La fonction strchr() renvoie un pointeur sur la premiere
@@ -20,20 +23,25 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == (char) c)
-		{
-			return ((char *)&s[i]);
-		}
-		i++;
-	}
-	if (c == 0)
-	{
-		return ((char *)&s[i]);
-	}
-	return (0);
+	while (*s && *s != (char) c)
+		s++;
+	if (*s == (char) c)
+		return ((char *)s);
+	return (NULL);
 }
+
+/*
+int	main(void)
+{
+	printf("\n****** FT_STRCHR ********\n");
+	printf("ft_strchr(\"mouslim\", 's')\nReturn : %s\n\n",
+		ft_strchr("mouslim", 's'));
+	printf("ft_strchr(\"mouslim\", 0)\nReturn : %s\n",
+		ft_strchr("mouslim", 0));
+	printf("\nstrchr(\"mouslim\", 's')\nReturn : %s\n\n",
+		strchr("mouslim", 's'));
+	printf("strchr(\"mouslim\", 0)\nReturn : %s\n",
+		strchr("mouslim", 0));
+	printf("*************************\n");
+}
+*/

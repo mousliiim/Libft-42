@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 17:50:58 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/11/10 23:26:53 by mmourdal         ###   ########.fr       */
+/*   Created: 2022/11/12 03:10:36 by mmourdal          #+#    #+#             */
+/*   Updated: 2022/11/12 19:00:51 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
- * la fonction strdup alloue une nouvelle zone de mémoire via la fonction malloc
- * afin d'y copier la chaîne de caractères initiale donner en paramétre (*s).
+Itère sur la liste ’lst’ et applique la fonction
+’f’ au contenu chaque élément.
 */
 
-char	*ft_strdup(const char *s)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int		i;
-	int		len;
-	char	*str;
+	t_list	*temp;
 
-	len = ft_strlen(s);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (s[i])
+	if (!lst || !f)
+		return ;
+	while (lst)
 	{
-		str[i] = s[i];
-		i++;
+		temp = lst->next;
+		(*f)(lst->content);
+		lst = temp;
 	}
-	str[i] = '\0';
-	return (str);
 }

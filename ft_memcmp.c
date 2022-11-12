@@ -6,9 +6,10 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 19:21:48 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/07 20:00:46 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/11/10 23:26:04 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /* Cette fonction permet de comparer le contenu de deux blocs de mémoire

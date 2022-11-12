@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 17:50:58 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/11/10 23:26:53 by mmourdal         ###   ########.fr       */
+/*   Created: 2022/11/12 01:44:23 by mmourdal          #+#    #+#             */
+/*   Updated: 2022/11/12 19:13:57 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
- * la fonction strdup alloue une nouvelle zone de mémoire via la fonction malloc
- * afin d'y copier la chaîne de caractères initiale donner en paramétre (*s).
+Libère la mémoire de l’élément passé en argument en
+utilisant la fonction ’del’ puis avec free(3). La
+mémoire de ’next’ ne doit pas être free.
+lst: L’élément à free
+del: L’adresse de la fonction permettant de
+supprimer le contenu de l’élément.
 */
 
-char	*ft_strdup(const char *s)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	int		i;
-	int		len;
-	char	*str;
-
-	len = ft_strlen(s);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		str[i] = s[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	if (!lst || !del)
+		return ;
+	(del)(lst->content);
+	free (lst);
+	lst = NULL;
 }

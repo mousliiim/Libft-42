@@ -4,35 +4,40 @@ SRCS	= ft_isalpha.c ft_isdigit.c ft_atoi.c ft_isalnum.c ft_isascii.c ft_isprint.
 		ft_strlcat.c ft_strnstr.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 		ft_substr.c ft_strmapi.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_striteri.c \
 
-OBJS			= $(SRCS:.c=.o)
+BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-BONUS_OBJS		= $(BONUS:.c=.o)
-
-CC				= gcc
-RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
-
-NAME			= libft.a
-
-all:			$(NAME)
-
-$(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
-
-clean:
-				$(RM) $(OBJS) $(BONUS_OBJS)
-
-fclean:			clean
-				$(RM) $(NAME)
-
-re:				fclean $(NAME)
-
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+NAME	= libft.a
+ 
+OBJS		= ${SRCS:.c=.o} ${ADDED:.c=.o} 
+ 
+OBJS_BONUS	= ${BONUS:.c=.o}
+ 
+HEADERS	= ./
+ 
+.c.o	:
+		cc -Wall -Wextra -Werror -I ${HEADERS} -c $< -o ${<:.c=.o}
+ 
+all : ${NAME}
+ 
+${NAME} : ${OBJS}
+		ar rcs ${NAME} ${OBJS}
+ 
+bonus	: $(OBJS) $(OBJS_BONUS)
+		ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+ 
+clean :
+		rm -f ${OBJS} ${OBJS_BONUS} $(OBJS_GNL) $(OBJS_PRINTF)
+ 
+fclean : clean
+		rm -f ${NAME}
+ 
+re : fclean all
+ 
+.PHONY : all bonus clean fclean re
 
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(OBJS_BONUS)
 
 myclean:
 	$(info ************  Je clean pour toi 😉  *************)
@@ -46,4 +51,3 @@ myclean:
 	$(info Suprimme le fichier libft.a ✅)
 	$(info ************  Et voila c'est fait  *************)
 
-.PHONY:			all clean fclean re bonus

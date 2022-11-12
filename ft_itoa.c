@@ -6,9 +6,10 @@
 /*   By: mmourdal <mmourdal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 22:16:58 by mmourdal          #+#    #+#             */
-/*   Updated: 2022/10/20 14:33:48 by mmourdal         ###   ########.fr       */
+/*   Updated: 2022/11/12 19:16:05 by mmourdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -16,7 +17,7 @@
  * Il peut également convertir des nombres négatifs en une string.
 */
 
-int	len_num(long num)
+static int	len_num(long num)
 {
 	int	i;
 
